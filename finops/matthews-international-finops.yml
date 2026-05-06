@@ -1,5 +1,6 @@
 specification: FinOps Framework
 specificationVersion: '1.0'
+schema: https://www.finops.org/framework/
 alignedWith:
   framework: FinOps Foundation Framework
   frameworkUrl: https://www.finops.org/framework/
@@ -8,107 +9,96 @@ alignedWith:
   dataSpecUrl: https://focus.finops.org/focus-specification/v1-3/
 provider: Matthews International
 providerId: matthews-international
-publisherName: Matthews International
-serviceCategory: API
+publisherName: Matthews International Corporation
+serviceCategory: Industrial / B2B Solutions
 created: '2026-05-04'
-modified: '2026-05-04'
+modified: '2026-05-05'
+reconciled: false
 tags:
   - Memorialization
   - Branding
   - Industrial
   - FinOps
-  - Cost Management
   - FOCUS
-description: FinOps framework definition for the Matthews International API surface. Provides a FOCUS-aligned
-  mapping for cost allocation, usage measurement, and unit-economics reporting across the provider's APIs.
+description: 'FOCUS-aligned FinOps shape for Matthews International: solution / project-priced industrial
+  and brand-workflow integrations. There is no per-API-call meter; cost lives at the contract / project
+  level.'
+notes: |
+  No public per-API pricing. Meters track contract-level economics (license, project services, support)
+  rather than API request volume.
+sources:
+  - https://www.matw.com/
 principles:
   - name: Visibility
-    description: Make API consumption costs visible to engineering, product, and finance teams in near
-      real-time.
+    description: Track integration spend at the project / contract level via the underlying purchase
+      order and statement-of-work; aggregate by Matthews business segment (Memorialization, Industrial
+      Technologies, SGK).
   - name: Allocation
-    description: Tag every chargeable API call with the consuming team, environment, application, and
-      feature so cost can be allocated.
+    description: Allocate by consuming business unit / facility / brand. For warehouse automation, allocate
+      by site; for SGK brand workflows, allocate by brand and packaging program.
   - name: Optimization
-    description: Continuously evaluate request patterns, caching, batching, and tier selection to reduce
-      cost per useful unit of work.
+    description: Consolidate integrations across sites and brands to reuse a single connector, negotiate
+      multi-year support, and revisit feature usage at contract renewal.
   - name: Accountability
-    description: Establish budget owners and chargeback or showback flows for each consuming team.
+    description: Assign a contract owner per Matthews business segment who reviews invoice accuracy and
+      milestone delivery against the SOW.
 domains:
   - name: Understand Usage and Cost
     capabilities:
-      - Data Ingestion
       - Allocation
       - Reporting and Analytics
-      - Anomaly Management
   - name: Quantify Business Value
     capabilities:
       - Planning and Estimating
-      - Forecasting
       - Budgeting
-      - Benchmarking
       - Unit Economics
   - name: Optimize Usage and Cost
     capabilities:
-      - Architecting for Cloud
-      - Rate Optimization
-      - Workload Optimization
-      - Cloud Sustainability
       - Licensing and SaaS
+      - Workload Optimization
   - name: Manage the FinOps Practice
     capabilities:
-      - FinOps Practice Operations
-      - FinOps Education and Enablement
       - Invoicing and Chargeback
       - Onboarding Workloads
-      - Intersecting Disciplines
 billingModel:
-  pricingCategory: Usage-Based
-  billingFrequency: Monthly
-  billingCurrency: USD
+  pricingCategory: Project / Solution Contract
+  billingFrequency: Per-Invoice
+  billingCurrency: USD (settlement varies)
   chargeCategories:
-    - Usage
     - Purchase
-    - Tax
-    - Credit
+    - Usage
     - Adjustment
-  chargeFrequency: Recurring
 focusColumns:
-  ServiceName: Matthews International
-  ServiceCategory: Developer Tools / API
+  ServiceName: Matthews International Solutions
+  ServiceCategory: Industrial / B2B Solutions
   ProviderName: Matthews International
-  PublisherName: Matthews International
-  InvoiceIssuerName: Matthews International
-  PricingCategory: Usage-Based
-  PricingUnit: request
+  PublisherName: Matthews International Corporation
+  InvoiceIssuerName: Matthews International Corporation
   BillingCurrency: USD
-  ChargeCategory: Usage
+  ChargeCategory: Purchase
 meters:
-  - name: api_requests
-    description: Count of billable API requests
-    unit: request
+  - name: solution_license
+    description: Per-solution license, billed under the customer contract.
+    unit: month
+    aggregation: max
+    dimensions:
+      - segment
+      - product
+      - site
+  - name: professional_services
+    description: Implementation / professional services hours billed against the SOW.
+    unit: hour
     aggregation: sum
     dimensions:
-      - api
-      - endpoint
-      - tier
-      - region
-      - consumer
-  - name: data_egress
-    description: Bytes returned over the network in API responses
-    unit: GB
-    aggregation: sum
+      - project
+      - site
+  - name: support_contract
+    description: Annual support / maintenance contract value.
+    unit: year
+    aggregation: max
     dimensions:
-      - api
-      - region
-      - consumer
-  - name: compute_seconds
-    description: Server-side compute consumed by the request, where applicable
-    unit: second
-    aggregation: sum
-    dimensions:
-      - api
-      - endpoint
-      - tier
+      - segment
+      - product
 apis:
   - name: Matthews International API
     baseURL: https://api.matw.com
@@ -119,11 +109,11 @@ apis:
     serviceName: Matthews International API
     serviceCategory: API
 unitEconomics:
-  - name: Cost per 1K Requests
-    metric: billed_cost / (api_requests / 1000)
+  - name: Cost per Site
+    metric: billed_cost / active_sites
     target: TBD
-  - name: Cost per Active Consumer
-    metric: billed_cost / active_consumers
+  - name: Cost per Brand Program
+    metric: billed_cost / brand_programs
     target: TBD
 maintainers:
   - FN: Kin Lane
