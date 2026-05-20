@@ -28,6 +28,8 @@ apis:
     description: >-
       The Matthews International API provides access to platform services and data for enterprise integration and automation.
 common:
+  - type: LinkedIn
+    url: https://www.linkedin.com/company/matthews-international
   - type: Website
     url: https://www.matw.com
 maintainers:
