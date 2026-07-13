@@ -1,0 +1,21 @@
+{
+  "repo": "matthews-international",
+  "feeds": [
+    {
+      "source": "https://www.matw.com/news-media",
+      "feed_url": "https://www.matw.com/investors/news-events/press-releases/rss",
+      "title": "",
+      "saved": 0,
+      "method": "discovered"
+    },
+    {
+      "source": "https://www.matw.com",
+      "feed_url": "https://www.matw.com/news-media/press-releases/rss",
+      "title": "",
+      "saved": 0,
+      "method": "discovered"
+    }
+  ],
+  "fetched": "2026-07-11T11:50:51Z",
+  "post_count": 5
+}
