@@ -2,11 +2,18 @@
   "repo": "matthews-international",
   "feeds": [
     {
-      "source": "https://www.matw.com/news-media",
+      "source": "https://www.matw.com/investors/news-events/press-releases/rss",
       "feed_url": "https://www.matw.com/investors/news-events/press-releases/rss",
       "title": "",
       "saved": 0,
-      "method": "discovered"
+      "method": "feed"
+    },
+    {
+      "source": "https://www.matw.com/news-media/press-releases/rss",
+      "feed_url": "https://www.matw.com/news-media/press-releases/rss",
+      "title": "",
+      "saved": 0,
+      "method": "feed"
     },
     {
       "source": "https://www.matw.com",
@@ -16,6 +23,6 @@
       "method": "discovered"
     }
   ],
-  "fetched": "2026-07-11T11:50:51Z",
-  "post_count": 5
+  "fetched": "2026-08-01T15:49:00Z",
+  "post_count": 20
 }
