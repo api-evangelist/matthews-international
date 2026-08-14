@@ -2,52 +2,114 @@ aid: matthews-international
 url: https://raw.githubusercontent.com/api-evangelist/matthews-international/refs/heads/main/apis.yml
 name: Matthews International
 type: Index
+x-type: company
 accessModel:
   pricing: enterprise
-  onboarding: unknown
+  onboarding: request
   trial: false
   try_now: false
   public: false
   label: Enterprise
-  confidence: medium
+  confidence: high
   source:
   - plans
-  generated: '2026-07-22'
-  method: derived
+  generated: '2026-08-13'
+  method: searched
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/matthews-international.png
 tags:
   - Memorialization
   - Branding
   - Industrial
+  - Manufacturing
+  - Marking and Coding
+  - Energy Storage
+  - Funeral Services
+  - Company
 description: >-
-  Matthews International is a major US corporation and Fortune 1000 company. The Matthews International API provides programmatic access to its platform services, data, and integrations for enterprise customers and partners.
+  Matthews International Corporation (NASDAQ: MATW) is a Pittsburgh, Pennsylvania
+  diversified manufacturer founded in 1850 and reporting in three segments.
+  Memorialization covers bronze and granite memorials, caskets, cremation-related
+  products and cremation and incineration equipment for the cemetery and funeral home
+  industries, sold through Matthews Aurora Funeral Solutions and Matthews Environmental
+  Solutions. Industrial Technologies covers product identification — the Matthews
+  Marking Systems marking and coding business and its MPERIA controller platform — plus
+  the design, manufacture and service of custom energy storage solutions including
+  dry-battery-electrode coating and converting lines. Brand Solutions is now a 40%
+  ownership interest in Propelis Group, the entity formed on 1 May 2025 when Matthews
+  contributed the majority of its SGK brand business; the company sold its warehouse
+  automation business (Matthews Automation Solutions — Pyramid, Compass and Lightning
+  Pick) to Duravant on 31 December 2025. Matthews is a manufacturer rather than a
+  software vendor: it operates no public developer program and publishes no API
+  documentation, SDK, package, CLI, MCP server, agent card or machine-readable
+  specification. The MPERIA controller sold with its marking and coding equipment
+  markets a "common API" for ERP, WMS, MES and PLC integration, but that is an
+  on-premises XML or command-line protocol carried over Ethernet or RS-232 and
+  documented only in sales collateral — not a public web API.
 created: '2026-04-19'
-modified: '2026-04-19'
-specificationVersion: '0.19'
-apis:
-  - aid: matthews-international:matthews-international-api
-    name: Matthews International API
-    tags:
-      - Memorialization
-      - Branding
-      - Industrial
-    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
-    baseURL: https://api.matw.com
-    humanURL: https://developer.matw.com
-    properties:
-      - url: https://developer.matw.com/docs
-        type: Documentation
-    description: >-
-      The Matthews International API provides access to platform services and data for enterprise integration and automation.
+modified: '2026-08-13'
+specificationVersion: '0.20'
+apis: []
 common:
-  - type: DomainSecurity
-    url: security/matthews-international-domain-security.yml
-  - type: LinkedIn
-    url: https://www.linkedin.com/company/matthews-international
   - type: Website
     url: https://www.matw.com
+  - type: About
+    url: https://www.matw.com/about
   - type: Blog
     url: https://www.matw.com/news-media
+  - type: ContactUs
+    url: https://www.matw.com/contact
+  - type: Careers
+    url: https://www.matw.com/careers
+  - type: PrivacyPolicy
+    url: https://www.matw.com/privacy-policy
+  - type: TermsOfService
+    url: https://www.matw.com/terms-conditions
+  - type: LinkedIn
+    url: https://www.linkedin.com/company/matthews-international
+  - type: DomainSecurity
+    url: security/matthews-international-domain-security.yml
+  - type: Plans
+    url: plans/matthews-international-plans-pricing.yml
+  - type: RateLimits
+    url: rate-limits/matthews-international-rate-limits.yml
+  - type: LLMsTxt
+    url: llms/matthews-international-llms.txt
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
+x-enrichment:
+  date: '2026-08-13'
+  status: minimal
+  artifacts_added: 2
+  pass: local-v1
+x-coverage:
+  state: none
+  reason: no-developer-program
+  detail: >-
+    Matthews International is a 175-year-old manufacturer of memorial products, cremation
+    equipment and industrial marking systems with no developer program of any kind — the
+    api.matw.com and developer.matw.com hosts this profile carried were scaffold values that
+    are both NXDOMAIN, matw.com serves no robots.txt and a 368-URL sitemap with not one
+    developer, API or documentation page, and the only integration surface it markets is the
+    MPERIA controller's on-premises XML / command-line protocol over Ethernet or RS-232,
+    documented in equipment datasheets rather than a public reference.
+  evidence:
+    - url: https://developer.matw.com/
+      status: 0
+    - url: https://api.matw.com/
+      status: 0
+    - url: https://www.matw.com/openapi.json
+      status: 404
+    - url: https://www.matw.com/llms.txt
+      status: 404
+    - url: https://www.matw.com/.well-known/api-catalog
+      status: 404
+    - url: https://www.matw.com/.well-known/agent-card.json
+      status: 404
+    - url: https://matthewsmarking.com/.well-known/agent-card.json
+      status: 404
+    - url: https://api.github.com/orgs/matthewsintl
+      status: 404
+    - url: https://www.matw.com/sitemap.xml
+      status: 200
+  checked: '2026-08-13'
