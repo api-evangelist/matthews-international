@@ -5,7 +5,7 @@
       "source": "https://www.matw.com/investors/news-events/press-releases/rss",
       "feed_url": "https://www.matw.com/investors/news-events/press-releases/rss",
       "title": "",
-      "saved": 0,
+      "saved": 1,
       "method": "feed"
     },
     {
@@ -23,6 +23,6 @@
       "method": "discovered"
     }
   ],
-  "fetched": "2026-08-06T14:08:46Z",
-  "post_count": 21
+  "fetched": "2026-08-15T12:11:08Z",
+  "post_count": 22
 }
