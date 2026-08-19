@@ -1,0 +1,181 @@
+generated: '2026-08-13'
+method: probed
+source: >-
+  Live anonymous GET probes of every Matthews International host reachable without
+  credentials, plus a deliberately invalid control path per host to detect soft-404s.
+found: 0
+summary: >-
+  No /.well-known/ document is published on any host Matthews International controls.
+  The corporate site (www.matw.com), the Matthews Environmental Solutions site and the
+  MyMatthews customer portal all return genuine HTTP 404s. Matthews Marking Systems
+  returns genuine 404s for /.well-known/* but 403s its own site root behind a WAF.
+  Matthews Aurora answers every /.well-known/* path with an HTTP 202 carrying a 190-210
+  byte sgcaptcha bot-challenge redirect — a challenge interstitial, not a document, and
+  NOT recorded as a hit. No pointer is wired into apis.yml because nothing was found.
+hosts:
+- host: https://www.matw.com
+  note: >-
+    Corporate site. Returns a real 14KB HTML 404 page for unknown paths, byte-length
+    varying with the echoed path. /robots.txt is also 404; /sitemap.xml is 200 with
+    368 URLs, none of which is a developer, API or documentation page.
+  soft_404: false
+  control_path: /control-path-does-not-exist-9f3a2b
+  control_status: 404
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+  - path: /.well-known/oauth-protected-resource
+    status: 404
+  - path: /.well-known/api-catalog
+    status: 404
+  - path: /.well-known/ai-plugin.json
+    status: 404
+  - path: /.well-known/agent-card.json
+    status: 404
+  - path: /.well-known/agent.json
+    status: 404
+- host: https://www.matthewsaurora.com
+  note: >-
+    Matthews Aurora Funeral Solutions. An sgcaptcha bot-challenge sits in front of the
+    origin: every /.well-known/* path returns HTTP 202 with a ~200 byte HTML meta-refresh
+    to /.well-known/sgcaptcha/. The control path returns a real 109KB 404 page, so the
+    202s are challenge interstitials rather than served documents. Treated as a miss.
+  soft_404: false
+  bot_challenge: true
+  control_path: /control-path-does-not-exist-9f3a2b
+  control_status: 404
+  documents:
+  - path: /.well-known/security.txt
+    status: 202
+    verdict: bot-challenge
+    content_type: text/html
+  - path: /.well-known/openid-configuration
+    status: 202
+    verdict: bot-challenge
+    content_type: text/html
+  - path: /.well-known/oauth-authorization-server
+    status: 202
+    verdict: bot-challenge
+    content_type: text/html
+  - path: /.well-known/oauth-protected-resource
+    status: 202
+    verdict: bot-challenge
+    content_type: text/html
+  - path: /.well-known/api-catalog
+    status: 202
+    verdict: bot-challenge
+    content_type: text/html
+  - path: /.well-known/ai-plugin.json
+    status: 202
+    verdict: bot-challenge
+    content_type: text/html
+  - path: /.well-known/agent-card.json
+    status: 202
+    verdict: bot-challenge
+    content_type: text/html
+  - path: /.well-known/agent.json
+    status: 202
+    verdict: bot-challenge
+    content_type: text/html
+- host: https://matthewsmarking.com
+  note: >-
+    Matthews Marking Systems (WordPress). Serves a genuine 63KB HTML 404 for every
+    /.well-known/* path. The site root, /wp-json/ and /openapi.json are 403 behind a
+    WAF. /robots.txt is 200 and names no API or spec path.
+  soft_404: false
+  control_path: /control-path-does-not-exist-9f3a2b
+  control_status: 403
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/api-catalog
+    status: 404
+  - path: /.well-known/agent-card.json
+    status: 404
+  - path: /.well-known/agent.json
+    status: 404
+- host: https://matthewsenvironmentalsolutions.com
+  note: >-
+    Matthews Environmental Solutions (Joomla). matthewsenvironmental.com redirects here.
+    Every probed path returns the same genuine 2284-byte 404, including the control path.
+  soft_404: false
+  control_path: /control-path-does-not-exist-9f3a2b
+  control_status: 404
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+  - path: /.well-known/oauth-protected-resource
+    status: 404
+  - path: /.well-known/api-catalog
+    status: 404
+  - path: /.well-known/ai-plugin.json
+    status: 404
+  - path: /.well-known/agent-card.json
+    status: 404
+  - path: /.well-known/agent.json
+    status: 404
+- host: https://mymatthews.matw.com
+  note: >-
+    MyMatthews customer sign-in portal (Apache). Returns the stock 276-byte Apache 404,
+    byte-for-byte identical to the control path, for every /.well-known/* path.
+  soft_404: false
+  control_path: /control-path-does-not-exist-9f3a2b
+  control_status: 404
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+  - path: /.well-known/oauth-protected-resource
+    status: 404
+  - path: /.well-known/api-catalog
+    status: 404
+  - path: /.well-known/ai-plugin.json
+    status: 404
+  - path: /.well-known/agent-card.json
+    status: 404
+  - path: /.well-known/agent.json
+    status: 404
+dead_hosts:
+- host: api.matw.com
+  dns: NXDOMAIN
+  note: >-
+    Carried as the baseURL of a fabricated "Matthews International API" entry in this
+    repo's apis.yml until 2026-08-13. The name does not resolve; the API entry has been
+    removed.
+- host: developer.matw.com
+  dns: NXDOMAIN
+  note: >-
+    Carried as humanURL, and as a Documentation pointer to developer.matw.com/docs,
+    until 2026-08-13. The name does not resolve; both were removed.
+- host: docs.matw.com
+  dns: NXDOMAIN
+- host: developers.matw.com
+  dns: NXDOMAIN
+- host: status.matw.com
+  dns: NXDOMAIN
+- host: api.matthewsaurora.com
+  dns: 146.20.166.12
+  note: >-
+    Resolves to a Rackspace address but TCP connect times out on both 443 and 80 — a
+    dangling record, not a reachable API host. Not used as a baseURL.
+x-evidence:
+  fetched: '2026-08-13'
+  method: HTTP GET, no credentials, browser User-Agent
+  note: >-
+    No WellKnown, SecurityTxt or AgentCard pointer is wired into apis.yml for this
+    artifact because nothing was found. The file exists to record the negative result,
+    the sgcaptcha bot challenge on matthewsaurora.com, and the dead scaffold hosts, so a
+    later run does not falsely credit a 202 or re-introduce api.matw.com.

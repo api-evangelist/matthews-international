@@ -42,20 +42,47 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Matthews International is a major US corporation and Fortune 1000 company. The Matthews International API provides programmatic access to its platform services, data, and integrations for enterprise customers and partners.
+Matthews International Corporation (NASDAQ: MATW) is a Pittsburgh, Pennsylvania diversified manufacturer founded in 1850, reporting in three segments: Memorialization (bronze and granite memorials, caskets, cremation and incineration equipment), Industrial Technologies (product identification / marking and coding, plus custom energy storage solutions including dry-battery-electrode coating and converting lines), and Brand Solutions (a 40% ownership interest in Propelis Group). It is a manufacturer, not a software vendor.
 
 **URL:** [Visit APIs.json URL](https://raw.githubusercontent.com/api-evangelist/matthews-international/refs/heads/main/apis.yml)
 
 **Run:** [Capabilities Using Naftiko](https://github.com/naftiko/fleet?utm_source=api-evangelist&utm_medium=readme&utm_campaign=company-api-evangelist&utm_content=repo)
 
+## Not published by Matthews International
+
+Matthews International publishes **no public API**. As of 2026-08-13 there is no developer
+portal, API reference, SDK, package, CLI, MCP server, A2A agent card, Postman collection, or
+machine-readable specification (OpenAPI, AsyncAPI, GraphQL SDL, JSON Schema) on any host the
+company controls, and no GitHub organization.
+
+The `api.matw.com` and `developer.matw.com` hosts previously recorded in this profile were
+scaffold values written by a 2026-05-04 bulk pass. **Both are NXDOMAIN — they never existed** —
+and they, along with the `developer.matw.com/docs` Documentation pointer and the "Matthews
+International API" entry built on them, were removed on 2026-08-13.
+
+The closest thing to an integration surface is the MPERIA controller sold with Matthews Marking
+Systems equipment, which Matthews markets as offering a "common API" for ERP/WMS/MES and PLC
+integration. That is an on-premises device protocol — XML or command line over Ethernet or
+RS-232 — documented in equipment datasheets, not a public web API with a published contract.
+
+Probe records: `well-known/matthews-international-well-known.yml`,
+`security/matthews-international-domain-security.yml`,
+`llms/matthews-international-llms.txt`.
+
+**Note on divested businesses.** The warehouse automation business (Matthews Automation
+Solutions — Pyramid, Compass, Lightning Pick) was sold to Duravant on 2025-12-31, and the
+majority of the SGK brand business was contributed to Propelis Group on 2025-05-01. Any API
+published on `matthewsautomation.com` or `sgkinc.com` belongs to another company and must not
+be attributed to Matthews International.
+
 ## Tags:
 
- - Memorialization, Branding, Industrial
+ - Memorialization, Branding, Industrial, Manufacturing, Marking and Coding, Energy Storage, Funeral Services, Company
 
 ## Timestamps
 
 - **Created:** 2026-04-19
-- **Modified:** 2026-04-19
+- **Modified:** 2026-08-13
 
 ## Maintainers
 

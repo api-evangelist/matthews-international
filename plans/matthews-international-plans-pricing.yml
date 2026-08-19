@@ -4,8 +4,16 @@ schema: https://raw.githubusercontent.com/api-evangelist/interface-research/main
 provider: Matthews International
 providerId: matthews-international
 created: '2026-05-04'
-modified: '2026-05-05'
+# Provenance stamped 2026-08-11: this artifact was written by the API Evangelist
+# bulk sweep dated 2026-05-04, not harvested from the provider. See roadmap#35.
+# 2026-08-13: re-checked against the live provider surface. The absence of published
+# API pricing is now a SEARCHED finding, not a scaffold assumption.
+generated: '2026-08-13'
+method: searched
+source: https://www.matw.com/
+modified: '2026-08-13'
 reconciled: false
+plan_count: 0
 tags:
   - Memorialization
   - Branding
@@ -16,11 +24,27 @@ description: Matthews International (NASDAQ MATW) is a diversified industrial ho
   Any technical integrations are bilateral B2B engagements (e.g. funeral home POS, packaging artwork
   workflow, warehouse automation control systems) priced inside the broader product / project contract.
 notes: |
-  No public developer portal, no published API pricing. Set reconciled=true only if a customer-facing
-  developer program is launched. The api.matw.com domain in the scaffold is illustrative; no public docs
-  resolve there.
+  plan_count is 0: Matthews International publishes ZERO priced API plans. There is no developer
+  portal, no pricing page for any API, and no self-serve sign-up. The single entry below records the
+  enterprise contact-sales motion, not a published tier. Set reconciled=true only if a customer-facing
+  developer program is launched.
+
+  Re-verified 2026-08-13. The api.matw.com and developer.matw.com hosts written by the 2026-05-04
+  scaffold are NXDOMAIN and were removed from apis.yml. The company's sitemap.xml lists 368 URLs and
+  contains no pricing, plans, developer or API page. mymatthews.matw.com is a customer sign-in portal
+  with no public pricing behind it.
 sources:
   - https://www.matw.com/
+evidence:
+  - url: https://www.matw.com/sitemap.xml
+    status: 200
+    note: 368 URLs; no pricing, plans, developer or API page among them.
+  - url: https://developer.matw.com/
+    status: 0
+    note: DNS NXDOMAIN.
+  - url: https://mymatthews.matw.com/
+    status: 200
+    note: Customer sign-in portal. Authentication wall, no published pricing.
 plans:
   - id: matthews-international-contact-sales
     name: Contact Sales

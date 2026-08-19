@@ -12,6 +12,9 @@ providerId: matthews-international
 publisherName: Matthews International Corporation
 serviceCategory: Industrial / B2B Solutions
 created: '2026-05-04'
+# Provenance stamped 2026-08-11: this artifact was written by the API Evangelist
+# bulk sweep dated 2026-05-04, not harvested from the provider. See roadmap#35.
+method: generated
 modified: '2026-05-05'
 reconciled: false
 tags:
@@ -26,6 +29,12 @@ description: 'FOCUS-aligned FinOps shape for Matthews International: solution / 
 notes: |
   No public per-API pricing. Meters track contract-level economics (license, project services, support)
   rather than API request volume.
+
+  2026-08-13: the `apis:` block previously named a "Matthews International API" at
+  https://api.matw.com. That host is NXDOMAIN and the API entry was a 2026-05-04 scaffold
+  fabrication; both were removed here and from apis.yml. This artifact remains a GENERATED FinOps
+  shape for contract-level Matthews spend — it is not a Matthews-published document and no
+  FinOps pointer is wired into apis.yml for it.
 sources:
   - https://www.matw.com/
 principles:
@@ -99,15 +108,7 @@ meters:
     dimensions:
       - segment
       - product
-apis:
-  - name: Matthews International API
-    baseURL: https://api.matw.com
-    tags:
-      - Memorialization
-      - Branding
-      - Industrial
-    serviceName: Matthews International API
-    serviceCategory: API
+apis: []
 unitEconomics:
   - name: Cost per Site
     metric: billed_cost / active_sites

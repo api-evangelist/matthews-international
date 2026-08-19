@@ -1,4 +1,4 @@
-generated: '2026-07-11'
+generated: '2026-08-13'
 method: probed
 source: live DNS/TLS/HTTP probes of apis.yml + OpenAPI hosts
 hosts:
@@ -8,10 +8,6 @@ hosts:
   cert_expires: Jan  8 23:59:59 2027 GMT
   hsts: true
   hsts_max_age: 31536000
-- host: developer.matw.com
-  https: false
-- host: api.matw.com
-  https: false
 domains:
 - domain: matw.com
   dnssec: false

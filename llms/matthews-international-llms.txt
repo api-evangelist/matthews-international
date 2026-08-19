@@ -1,0 +1,92 @@
+# Matthews International
+
+> Matthews International Corporation (NASDAQ: MATW) is a Pittsburgh, Pennsylvania
+> diversified manufacturer founded in 1850, reporting in three segments:
+> Memorialization (bronze and granite memorials, caskets, cremation and incineration
+> equipment), Industrial Technologies (product identification / marking and coding, plus
+> custom energy storage solutions including dry-battery-electrode coating and converting
+> lines), and Brand Solutions (a 40% ownership interest in Propelis Group). It is a
+> manufacturer, not a software vendor.
+
+<!--
+generated: '2026-08-13'
+method: generated
+source: apis.yml + live probes of matw.com, matthewsaurora.com, matthewsmarking.com,
+        matthewsenvironmentalsolutions.com and mymatthews.matw.com
+Matthews publishes no llms.txt of its own; /llms.txt returned 404 on every host probed.
+-->
+
+## APIs
+
+Matthews International publishes no public API. No developer portal, API reference, API
+documentation, SDK, package, CLI, MCP server, A2A agent card, Postman collection or
+machine-readable specification (OpenAPI, Swagger, AsyncAPI, GraphQL SDL, JSON Schema)
+was found on any host the company controls. There is no GitHub organization.
+
+The `api.matw.com` and `developer.matw.com` hosts previously recorded against this
+company were scaffold values that never existed — both are NXDOMAIN — and were removed
+from `apis.yml` on 2026-08-13.
+
+The closest thing to an integration surface is the MPERIA controller sold with Matthews
+Marking Systems equipment. Matthews markets it as offering "a single user interface and
+common API" for controlling Matthews and third-party marking technologies and for
+integrating ERP, WMS, MES and PLC systems without middleware. In practice that is an
+on-premises device protocol — XML or a command-line protocol carried over Ethernet or
+RS-232, with VNC for remote management — documented in product datasheets and sales
+collateral rather than in a public developer reference. It is not addressable over the
+internet and has no published specification.
+
+## Company
+
+- [Home](https://www.matw.com): Matthews International Corporation corporate site.
+- [About](https://www.matw.com/about): Company history, purpose and leadership.
+- [Businesses](https://www.matw.com/businesses): The segment overview.
+- [Memorialization](https://www.matw.com/businesses/memorialization): Bronze and granite
+  memorials, caskets, cremation and incineration equipment for cemeteries and funeral homes.
+- [Industrial Technologies](https://www.matw.com/businesses/industrial-technologies):
+  Product identification (marking and coding) and custom energy storage solutions.
+- [Contact](https://www.matw.com/contact): Corporate and segment contact details.
+- [Careers](https://www.matw.com/careers): Open roles.
+
+## Brands and operating sites
+
+- [Matthews Aurora Funeral Solutions](https://www.matthewsaurora.com): Caskets and funeral
+  home products. An sgcaptcha bot challenge fronts this host; automated clients receive an
+  HTTP 202 challenge interstitial rather than page content.
+- [Matthews Marking Systems](https://matthewsmarking.com): Industrial marking and coding
+  printers and the MPERIA controller platform. The site root, `/wp-json/` and `/openapi.json`
+  return HTTP 403 behind a WAF.
+- [Matthews Environmental Solutions](https://matthewsenvironmentalsolutions.com): Cremation
+  and incineration equipment. `matthewsenvironmental.com` redirects here.
+- [MyMatthews](https://mymatthews.matw.com): Customer sign-in portal. Authentication only —
+  no public documentation, no API reference, no registration for developers.
+
+## Investors and news
+
+- [Investor Relations](https://www.matw.com/investors): Financials, SEC filings and governance.
+- [News & Media](https://www.matw.com/news-media): Press releases and news coverage.
+- [Press Releases](https://www.matw.com/news-media/press-releases): Dated corporate announcements.
+
+## Legal
+
+- [Privacy Policy](https://www.matw.com/privacy-policy)
+- [Terms & Conditions](https://www.matw.com/terms-conditions)
+- [Workplace Privacy Notice](https://www.matw.com/workplace-privacy-notice)
+- [Disclaimer](https://www.matw.com/disclaimer)
+
+## Notes
+
+- Portfolio changes matter for anyone looking for a Matthews software surface. The
+  warehouse automation business — Matthews Automation Solutions, with the Pyramid, Compass
+  and Lightning Pick WES/WCS software brands — was sold to Duravant on 31 December 2025, so
+  `matthewsautomation.com` is no longer a Matthews property. The majority of the SGK brand
+  business was contributed to Propelis Group on 1 May 2025, leaving Matthews with a 40%
+  interest, so `sgkinc.com` is likewise not a Matthews-controlled surface. Any API found on
+  those hosts belongs to another company and must not be attributed to Matthews.
+- `www.matw.com` serves no `/robots.txt` (HTTP 404). Its `/sitemap.xml` lists 368 URLs and
+  none of them is a developer, API or documentation page.
+- No `/.well-known/` document is served on any Matthews host. See
+  `well-known/matthews-international-well-known.yml` for the full probe record.
+- No public API pricing and no published rate limits exist. See
+  `plans/matthews-international-plans-pricing.yml` and
+  `rate-limits/matthews-international-rate-limits.yml`.

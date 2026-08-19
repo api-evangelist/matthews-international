@@ -4,8 +4,16 @@ schema: https://raw.githubusercontent.com/api-evangelist/interface-research/main
 provider: Matthews International
 providerId: matthews-international
 created: '2026-05-04'
-modified: '2026-05-05'
+# Provenance stamped 2026-08-11: this artifact was written by the API Evangelist
+# bulk sweep dated 2026-05-04, not harvested from the provider. See roadmap#35.
+# 2026-08-13: re-checked against the live provider surface. The absence of published
+# rate limits is now a SEARCHED finding, not a scaffold assumption.
+generated: '2026-08-13'
+method: searched
+source: https://www.matw.com/
+modified: '2026-08-13'
 reconciled: false
+limit_count: 0
 tags:
   - Memorialization
   - Branding
@@ -15,28 +23,49 @@ description: Matthews International does not publish API rate limits because the
   program. Any integration limits are negotiated inside the underlying solution contract (Memorialization,
   Industrial Technologies, SGK Brand Solutions) and are not externally documented.
 notes: |
-  No public rate-limit documentation. Set reconciled=true only if a public developer surface emerges.
+  limit_count is 0: Matthews International publishes ZERO rate limits, because it publishes no API.
+  Re-verified 2026-08-13 — no developer portal, no API reference, no machine-readable spec on any
+  Matthews-controlled host, and therefore no rate-limit headers to record.
+
+  The scaffold-era `responseCodes` block asserting throttled=429 / serviceUnavailable=503 was REMOVED
+  on 2026-08-13: it described status codes for an API that does not exist and no live response was
+  ever observed. Likewise the entries under `policies` are API Evangelist client-side recommendations,
+  not published Matthews policy, and are labelled as such.
+
+  Set reconciled=true only if a public developer surface emerges.
 sources:
   - https://www.matw.com/
-responseCodes:
-  throttled: 429
-  serviceUnavailable: 503
+evidence:
+  - url: https://www.matw.com/sitemap.xml
+    status: 200
+    note: 368 URLs; no API, developer or documentation page among them.
+  - url: https://api.matw.com/
+    status: 0
+    note: DNS NXDOMAIN. No host to observe a rate-limit header on.
 limits:
   - name: Contract-scoped limit
     scope: customer-contract
     metric: varies
     limit: 'not publicly documented'
     applies:
-      - Matthews International API
-    notes: Rate or throughput agreements, where present, exist inside the underlying solution contract
-      (e.g. warehouse automation control plane, brand workflow integration).
+      - MPERIA controller integrations (Matthews Marking Systems)
+    notes: >-
+      Matthews publishes no web API. Where an integration exists it is an on-premises MPERIA
+      controller link (XML or command-line protocol over Ethernet or RS-232) governed by the
+      equipment purchase contract, not by a published rate-limit policy. Nothing here was
+      observed on a live HTTP response.
 policies:
   - name: Backoff Strategy
-    description: Clients integrating with Matthews business-segment systems should follow standard exponential-
-      backoff-with-jitter on transient errors and honor Retry-After when present.
+    source: api-evangelist-recommendation
+    description: >-
+      NOT a published Matthews policy. General client-side guidance: exponential backoff with
+      jitter on transient errors, and honor Retry-After if one is ever returned.
   - name: Contract-Scoped Limits
-    description: Any throughput, concurrency, or polling-frequency obligations live in the integration
-      statement-of-work, not in a public developer doc.
+    source: api-evangelist-observation
+    description: >-
+      NOT a published Matthews policy. Any throughput, concurrency or polling-frequency
+      obligation lives in the equipment or integration statement-of-work; there is no public
+      developer doc that states one.
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
