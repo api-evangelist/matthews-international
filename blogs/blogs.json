@@ -9,21 +9,21 @@
       "method": "discovered"
     },
     {
-      "source": "https://www.matw.com/investors/news-events/press-releases/rss",
-      "feed_url": "https://www.matw.com/investors/news-events/press-releases/rss",
-      "title": "",
-      "saved": 0,
-      "method": "feed"
-    },
-    {
       "source": "https://www.matw.com/news-media/press-releases/rss",
       "feed_url": "https://www.matw.com/news-media/press-releases/rss",
       "title": "",
       "saved": 0,
       "method": "feed"
+    },
+    {
+      "source": "https://www.matw.com/investors/news-events/press-releases/rss",
+      "feed_url": "https://www.matw.com/investors/news-events/press-releases/rss",
+      "title": "",
+      "saved": 0,
+      "method": "feed"
     }
   ],
-  "fetched": "2026-09-06T19:17:18Z",
+  "fetched": "2026-09-13T13:00:00Z",
   "post_count": 22,
   "feed_nature": "vendor-blog",
   "feed_nature_basis": "path_blog",
