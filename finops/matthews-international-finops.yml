@@ -112,10 +112,8 @@ apis: []
 unitEconomics:
   - name: Cost per Site
     metric: billed_cost / active_sites
-    target: TBD
   - name: Cost per Brand Program
     metric: billed_cost / brand_programs
-    target: TBD
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
