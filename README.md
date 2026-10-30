@@ -1,4 +1,4 @@
-# Matthews International (matthews-international)
+# Matthews International
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -64,50 +64,101 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Matthews International Corporation (NASDAQ: MATW) is a Pittsburgh, Pennsylvania diversified manufacturer founded in 1850, reporting in three segments: Memorialization (bronze and granite memorials, caskets, cremation and incineration equipment), Industrial Technologies (product identification / marking and coding, plus custom energy storage solutions including dry-battery-electrode coating and converting lines), and Brand Solutions (a 40% ownership interest in Propelis Group). It is a manufacturer, not a software vendor.
+Matthews International Corporation (NASDAQ: MATW) is a Pittsburgh, Pennsylvania diversified manufacturer founded in 1850 and reporting in three segments. Memorialization covers bronze and granite memorials, caskets, cremation-related products and cremation and incineration equipment for the cemetery and funeral home industries, sold through Matthews Aurora Funeral Solutions and Matthews Environmental Solutions. Industrial Technologies covers product identification — the Matthews Marking Systems marking and coding business and its MPERIA controller platform — plus the design, manufacture and service of custom energy storage solutions including dry-battery-electrode coating and converting lines. Brand Solutions is now a 40% ownership interest in Propelis Group, the entity formed on 1 May 2025 when Matthews contributed the majority of its SGK brand business; the company sold its warehouse automation business (Matthews Automation Solutions — Pyramid, Compass and Lightning Pick) to Duravant on 31 December 2025. Matthews is a manufacturer rather than a software vendor: it operates no public developer program and publishes no API documentation, SDK, package, CLI, MCP server, agent card or machine-readable specification. The MPERIA controller sold with its marking and coding equipment markets a "common API" for ERP, WMS, MES and PLC integration, but that is an on-premises XML or command-line protocol carried over Ethernet or RS-232 and documented only in sales collateral — not a public web API.
 
-**URL:** [Visit APIs.json URL](https://raw.githubusercontent.com/api-evangelist/matthews-international/refs/heads/main/apis.yml)
+**Areas:** Memorialization · Branding · Industrial · Manufacturing · Marking and Coding · Energy Storage · Funeral Services · Company
 
-**Run:** [Capabilities Using Naftiko](https://github.com/naftiko/fleet?utm_source=api-evangelist&utm_medium=readme&utm_campaign=company-api-evangelist&utm_content=repo)
+## Matthews International on APIs.io
 
-## Not published by Matthews International
+Everything profiled for Matthews International is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/matthews-international/](https://apis.io/providers/matthews-international/)** — or go straight to one of the APIs or properties below.
 
-Matthews International publishes **no public API**. As of 2026-08-13 there is no developer
-portal, API reference, SDK, package, CLI, MCP server, A2A agent card, Postman collection, or
-machine-readable specification (OpenAPI, AsyncAPI, GraphQL SDL, JSON Schema) on any host the
-company controls, and no GitHub organization.
+### Published properties
 
-The `api.matw.com` and `developer.matw.com` hosts previously recorded in this profile were
-scaffold values written by a 2026-05-04 bulk pass. **Both are NXDOMAIN — they never existed** —
-and they, along with the `developer.matw.com/docs` Documentation pointer and the "Matthews
-International API" entry built on them, were removed on 2026-08-13.
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-The closest thing to an integration surface is the MPERIA controller sold with Matthews Marking
-Systems equipment, which Matthews markets as offering a "common API" for ERP/WMS/MES and PLC
-integration. That is an on-premises device protocol — XML or command line over Ethernet or
-RS-232 — documented in equipment datasheets, not a public web API with a published contract.
+#### Security (1)
 
-Probe records: `well-known/matthews-international-well-known.yml`,
-`security/matthews-international-domain-security.yml`,
-`llms/matthews-international-llms.txt`.
+Authentication, trust centre, and vulnerability disclosure.
 
-**Note on divested businesses.** The warehouse automation business (Matthews Automation
-Solutions — Pyramid, Compass, Lightning Pick) was sold to Duravant on 2025-12-31, and the
-majority of the SGK brand business was contributed to Propelis Group on 2025-05-01. Any API
-published on `matthewsautomation.com` or `sgkinc.com` belongs to another company and must not
-be attributed to Matthews International.
+- [Matthews International Domain Security](https://apis.io/security/matthews-international/matthews-international-domain-security/)
 
-## Tags:
+#### Plans and pricing (1)
 
- - Memorialization, Branding, Industrial, Manufacturing, Marking and Coding, Energy Storage, Funeral Services, Company
+Published plans, tiers and prices.
 
-## Timestamps
+- [Matthews International Plans Pricing](https://apis.io/plans/matthews-international/matthews-international-plans-pricing/)
 
-- **Created:** 2026-04-19
-- **Modified:** 2026-08-13
+#### Rate limits (1)
 
-## Maintainers
+Published request limits.
 
-**FN:** Kin Lane
+- [Matthews International Rate Limits](https://apis.io/rate-limits/matthews-international/matthews-international-rate-limits/)
 
-**Email:** kin@apievangelist.com
+#### FinOps (1)
+
+What the API costs to run, by operation.
+
+- [Matthews International Finops](https://apis.io/finops/matthews-international/matthews-international-finops/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://www.matw.com)
+- [Pricing](https://www.matw.com/)
+- [Blog](https://www.matw.com/news-media)
+- [Terms of service](https://www.matw.com/terms-conditions)
+- [Privacy policy](https://www.matw.com/privacy-policy)
+
+## API Evangelist rating
+
+**Kin Score 19.0** — emerging · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 55.4 |
+| Contract quality | 0.0 |
+| Contract governance | 0.0 |
+| Operational transparency | 21.1 |
+| Developer ergonomics | 2.4 |
+| Access clarity | 52.6 |
+
+**Agent readiness 2.5** — human-only
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | — |
+| Agentic Access | — |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | — |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | documented (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 11.5** — Energy & Utilities
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/matthews-international/](https://apis.io/providers/matthews-international/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Matthews International: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/matthews-international/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
