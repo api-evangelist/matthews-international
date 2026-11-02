@@ -1,0 +1,90 @@
+specification: API Commons Plans
+specificationVersion: '0.1'
+schema: https://raw.githubusercontent.com/api-evangelist/interface-research/main/schema/api-commons.yml#/$defs/Plans
+provider: Matthews International
+providerId: matthews-international
+created: '2026-05-04'
+# Provenance stamped 2026-08-11: this artifact was written by the API Evangelist
+# bulk sweep dated 2026-05-04, not harvested from the provider. See roadmap#35.
+# 2026-08-13: re-checked against the live provider surface. The absence of published
+# API pricing is now a SEARCHED finding, not a scaffold assumption.
+generated: '2026-08-13'
+method: searched
+source: https://www.matw.com/
+modified: '2026-08-13'
+reconciled: false
+plan_count: 0
+tags:
+  - Memorialization
+  - Branding
+  - Industrial
+description: Matthews International (NASDAQ MATW) is a diversified industrial holding company with three
+  segments — Memorialization, Industrial Technologies (warehouse automation, marking & coding), and
+  SGK Brand Solutions. The company does not operate a public developer program or publish API pricing.
+  Any technical integrations are bilateral B2B engagements (e.g. funeral home POS, packaging artwork
+  workflow, warehouse automation control systems) priced inside the broader product / project contract.
+notes: |
+  plan_count is 0: Matthews International publishes ZERO priced API plans. There is no developer
+  portal, no pricing page for any API, and no self-serve sign-up. The single entry below records the
+  enterprise contact-sales motion, not a published tier. Set reconciled=true only if a customer-facing
+  developer program is launched.
+
+  Re-verified 2026-08-13. The api.matw.com and developer.matw.com hosts written by the 2026-05-04
+  scaffold are NXDOMAIN and were removed from apis.yml. The company's sitemap.xml lists 368 URLs and
+  contains no pricing, plans, developer or API page. mymatthews.matw.com is a customer sign-in portal
+  with no public pricing behind it.
+sources:
+  - https://www.matw.com/
+evidence:
+  - url: https://www.matw.com/sitemap.xml
+    status: 200
+    note: 368 URLs; no pricing, plans, developer or API page among them.
+  - url: https://developer.matw.com/
+    status: 0
+    note: DNS NXDOMAIN.
+  - url: https://mymatthews.matw.com/
+    status: 200
+    note: Customer sign-in portal. Authentication wall, no published pricing.
+plans:
+  - id: matthews-international-contact-sales
+    name: Contact Sales
+    type: enterprise
+    description: Matthews International does not operate a public developer program. Integrations are
+      sold inside the broader product or solution contract for the relevant business segment (Memorialization,
+      Industrial Technologies, SGK).
+    entries:
+      - label: Solution Engagement
+        description: Pricing is part of the underlying product / project contract; there is no standalone
+          API SKU.
+        name: solution_engagement
+        type: tiered
+        metric: varies
+        limit: -1
+        timeFrame: usage
+        geo: global
+        unit: 1
+        price: 'contact sales'
+        userMultiplied: false
+    elements:
+      - name: Memorialization Integrations
+      - name: Industrial Technologies / Warehouse Automation Integrations
+      - name: SGK Brand Solutions Workflow Integrations
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com
+x-canonical:
+  generated: '2026-11-01'
+  vocabulary: engine/economics/plans-canonical.yml
+  models:
+  - negotiated
+  units:
+  - negotiated
+  plans:
+  - name: Contact Sales
+    access: enterprise
+    model: negotiated
+    model_how: derived
+    units:
+    - negotiated
+    periods:
+    - per-use
